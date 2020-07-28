@@ -1,0 +1,10 @@
+package KieRules;
+import com.pd.exp.droolsdemo.RequestMsg;
+import com.pd.exp.droolsdemo.Member;
+import com.pd.exp.droolsdemo.Questionnaire;
+
+rule "Qs Name"
+when
+    reqObj: RequestMsg(questionnaire=="HRA" && member.client=="HealthNet")
+then
+    reqObj.setQuestnrVerNm("HRA-HN-ENG");
